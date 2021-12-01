@@ -4,14 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dayOnePartOne": "node 2021/day1/partOne.js",
-    "dayOnePartTwo": "node 2021/day1/partTwo.js"
+    "start:2021": "node ./start_all.js 2021",
+    "start:all": "node ./start_all.js"
   },
   "author": "nimbl0",
-  "license": "MIT",
-  "dependencies": {
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7",
-    "perf_hooks": "^0.0.1"
-  }
+  "license": "MIT"
 }
