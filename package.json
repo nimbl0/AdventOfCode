@@ -1,0 +1,17 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dayOnePartOne": "node 2021/day1/partOne.js",
+    "dayOnePartTwo": "node 2021/day1/partTwo.js"
+  },
+  "author": "nimbl0",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "perf_hooks": "^0.0.1"
+  }
+}
