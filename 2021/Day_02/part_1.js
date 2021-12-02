@@ -12,15 +12,15 @@ function solution(arr) {
     let depth = 0;
     let forward = 0;
 
-    arr.forEach(element => {
-        let splitted = element.split(" ");
-        if(splitted[0] == "forward") {
-            forward += Number(splitted[1]);
-        } else if(splitted[0] == "up") {
-            depth -= Number(splitted[1]);
-        } else if(splitted[0] == "down") {
-            depth += Number(splitted[1]);
-        }
+    arr.map(element => element.split(" "))
+        .forEach(element => {
+            if(element[0] === "forward") {
+                forward += Number(element[1]);
+            } else if(element[0] === "up") {
+                depth -= Number(element[1]);
+            } else if(element[0] === "down") {
+                depth += Number(element[1]);
+            }
     });
 
     return depth * forward;

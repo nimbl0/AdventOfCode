@@ -13,18 +13,18 @@ function solution(arr) {
     let forward = 0;
     let aim = 0;
 
-    arr.forEach(element => {
-        let splitted = element.split(" ");
-        if(splitted[0] == "forward") {
-            forward += Number(splitted[1]);
-            if(aim > 0) {
-                depth += Number(splitted[1]) * aim;
+    arr.map(element => element.split(" "))
+        .forEach(element => {
+            if(element[0] === "forward") {
+                forward += Number(element[1]);
+                if(aim > 0) {
+                    depth += Number(element[1]) * aim;
+                }
+            } else if(element[0] === "up") {
+                aim -= Number(element[1]);
+            } else if(element[0] === "down") {
+                aim += Number(element[1]);
             }
-        } else if(splitted[0] == "up") {
-            aim -= Number(splitted[1]);
-        } else if(splitted[0] == "down") {
-            aim += Number(splitted[1]);
-        }
     });
 
     return depth * forward;
