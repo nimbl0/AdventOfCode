@@ -14,13 +14,9 @@ function solution(arr) {
 
     arr.map(element => element.split(" "))
         .forEach(element => {
-            if(element[0] === "forward") {
-                forward += Number(element[1]);
-            } else if(element[0] === "up") {
-                depth -= Number(element[1]);
-            } else if(element[0] === "down") {
-                depth += Number(element[1]);
-            }
+            if(element[0] === "forward") forward += Number(element[1]);
+            else if(element[0] === "up") depth -= Number(element[1]);
+            else if(element[0] === "down") depth += Number(element[1]);
     });
 
     return depth * forward;

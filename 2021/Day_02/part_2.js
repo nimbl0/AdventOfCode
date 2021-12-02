@@ -17,14 +17,10 @@ function solution(arr) {
         .forEach(element => {
             if(element[0] === "forward") {
                 forward += Number(element[1]);
-                if(aim > 0) {
-                    depth += Number(element[1]) * aim;
-                }
-            } else if(element[0] === "up") {
-                aim -= Number(element[1]);
-            } else if(element[0] === "down") {
-                aim += Number(element[1]);
+                if(aim > 0) depth += Number(element[1]) * aim;
             }
+            else if(element[0] === "up") aim -= Number(element[1]);
+            else if(element[0] === "down") aim += Number(element[1]);
     });
 
     return depth * forward;
