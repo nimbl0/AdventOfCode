@@ -4,7 +4,7 @@ let fs = require("fs");
 let path = require("path");
 let { performance } = require("perf_hooks");
 
-const data = String(fs.readFileSync(path.join(__dirname, "input.txt"))).split('\n');
+const data = String(fs.readFileSync(path.join(__dirname, "input.txt"))).split(require("os").EOL).map(e => e.split(" "));
 
 const pStart = performance.now();
 
@@ -13,8 +13,7 @@ function solution(arr) {
     let forward = 0;
     let aim = 0;
 
-    arr.map(element => element.split(" "))
-        .forEach(element => {
+    arr.forEach(element => {
             if(element[0] === "forward") {
                 forward += Number(element[1]);
                 if(aim > 0) depth += Number(element[1]) * aim;
